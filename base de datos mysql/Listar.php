@@ -8,19 +8,19 @@
 </head>
 <body>
 <?php
-  $conexion = mysqli_connect("localhost", "root", "", "biblioteca") or
-    die("Problemas con la conexión");
- $registros = mysqli_query($conexion, "select Id_editorial, Nombre from editorial") or
-    die("Problemas en el select:" . mysqli_error($conexion));
-  while ($regEditoriales = mysqli_fetch_array($registros)) {
-    echo "Codigo: " . $regEditoriales['Id_editorial'];
-    echo "<br>";
-    echo "Nombre: " . $regEditoriales['Nombre'] . "<br>";
-    echo "\n";
-    echo "<hr>";
-  }
-  mysqli_close($conexion);
-  ?>
+$libros = mysqli_query ($conection, "select ISBN, TITULO, A.Nombre, E.Nombre from libros L 
+inner join autor A on L.ID_AUTOR = A.Id_autor
+inner join editorial E on L.ID_EDITORIAL = E.Id_editorial") or
+die ("Error al ejecutar el comando select" . mysqli_error($conection));
+
+while ($valores = mysqli_fetch_array($libros)) {
+echo "<tr> <td>$valores[0]</td>
+<td>$valores[1]</td>
+<td>$valores[2]</td>
+<td>$valores[3]</td> </tr>";
+}
+
+?>
     
 </body>
 </html>

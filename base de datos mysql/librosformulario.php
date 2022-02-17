@@ -32,14 +32,14 @@
               echo "<select name='AutorLibro'>";
               $opciones = mysqli_query ($conection, "select * from autor");
               while ($valores = mysqli_fetch_array($opciones)) {
-                echo '<option value="'.$valores[Id_autor].'">'.$valores[Nombre].'</option>';
+                echo '<option value="'.$valores[ID_AUTOR].'">'.$valores[Nombre].'</option>';
               }
               echo "</select>";
 
               echo "<select name='EditorialLibro'>";
               $opciones = mysqli_query ($conection, "select * from editorial");
               while ($valores = mysqli_fetch_array($opciones)) {
-                echo '<option value="'.$valores[Id_editorial].'">'.$valores[Nombre].'</option>';
+                echo '<option value="'.$valores[ID_EDITORIAL].'">'.$valores[Nombre].'</option>';
               }
               echo "</select><br>";
             ?>

@@ -13,8 +13,8 @@
   $conexion = mysqli_connect("localhost", "root", "", "biblioteca") or
     die("Problemas con la conexión");
 
-  mysqli_query($conexion, "insert into editorial(Nombre) values 
-                       ('$_REQUEST[Nombre]')")
+  mysqli_query($conexion, "insert into autor(Id_autor, Nombre) values 
+                       ('$_REQUEST[ID]','$_REQUEST[Nombre]')")
     or die("Problemas en el select" . mysqli_error($conexion));
 
   mysqli_close($conexion);
