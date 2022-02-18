@@ -19,12 +19,12 @@
     
         <div class="form-group">
         <label for="fName">ISBN</label>
-        <input type="text" class="form-control" name="ISBN"  placeholder="ISBN" required >
+        <input type="text" class="form-control" name="ISBN"  placeholder="ISBN"  >
     
         </div>
         <div class="form-group">
         <label for="lName">TITULO</label>
-        <input type="text" class="form-control" name="TITULO"  placeholder="TITULO" required>
+        <input type="text" class="form-control" name="TITULO"  placeholder="TITULO" >
 
         <?php
               $conection = mysqli_connect("localhost", "root", "", "biblioteca") or
@@ -32,14 +32,14 @@
               echo "<select name='AutorLibro'>";
               $opciones = mysqli_query ($conection, "select * from autor");
               while ($valores = mysqli_fetch_array($opciones)) {
-                echo '<option value="'.$valores[ID_AUTOR].'">'.$valores[Nombre].'</option>';
+                echo '<option value="'.$valores[Id_autor].'">'.$valores[Nombre].'</option>';
               }
               echo "</select>";
 
               echo "<select name='EditorialLibro'>";
               $opciones = mysqli_query ($conection, "select * from editorial");
               while ($valores = mysqli_fetch_array($opciones)) {
-                echo '<option value="'.$valores[ID_EDITORIAL].'">'.$valores[Nombre].'</option>';
+                echo '<option value="'.$valores[Id_editorial].'">'.$valores[Nombre].'</option>';
               }
               echo "</select><br>";
             ?>

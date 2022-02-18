@@ -11,10 +11,9 @@
    $conexion = mysqli_connect("localhost", "root", "", "biblioteca") or
    die("Problemas con la conexión");
 
-        mysqli_query($conexion, "insert into libros(ISBN, TITULO) values 
-                      ('$_REQUEST[ISBN]','$_REQUEST[TITULO]')")
+        mysqli_query($conexion, "insert into libros(ISBN, TITULO, ID_AUTOR, ID_EDITORIAL) values 
+                      ('$_REQUEST[ISBN]','$_REQUEST[TITULO]','$_REQUEST[AutorLibro]','$_REQUEST[EditorialLibro]')")
      or die("Problemas en el select" . mysqli_error($conexion));
-
         mysqli_close($conexion);
 
         
