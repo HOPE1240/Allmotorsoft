@@ -7,12 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+
+<link rel="stylesheet" href="centrar.css">
+<body class="body">
+
   
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.html">Biblioteca</a>
-        <img src="pas.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="box2.svg" width="30" height="30" class="d-inline-block align-top" alt="">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,7 +32,42 @@
             </li>
           </ul>
         </div>
-      </nav>  
+      </nav>
+      
+      
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col"> ISBN</th>
+            <th scope="col"> Titulo</th>
+            <th scope="col"> Autor</th>
+            <th scope="col"> Editorial</th>
+          </tr>
+        </thead>
+    
+    
+
+
+    <?php
+    
+        $conection = mysqli_connect("localhost", "root", "", "biblioteca") or
+        die ("Error al conectar con la base de datos");
+
+        $libros = mysqli_query ($conection, "select ISBN, TITULO, A.Nombre, E.Nombre from libros L 
+                                             inner join autor A on L.ID_AUTOR = A.Id_autor
+                                             inner join editorial E on L.ID_EDITORIAL = E.Id_editorial") or
+        die ("Error al ejecutar el comando select" . mysqli_error($conection));
+
+        while ($valores = mysqli_fetch_array($libros)) {
+            echo "<tr> <td>$valores[0]</td>
+                       <td>$valores[1]</td>
+                       <td>$valores[2]</td>
+                       <td>$valores[3]</td> </tr>";
+        }
+        
+    ?>
+
+    </table>
     
 </body>
 </html>

@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+<link rel="stylesheet" href="centrar.css">
+<body class="body">
     <div class="container">
         <h1>Registro de libros</h1>
         <div>
@@ -43,10 +44,12 @@
               }
               echo "</select><br>";
             ?>
+
+            <br>
     
     
     
-        <input type="submit" name="submit" class="submit btn btn-success" value="Enviar" id="submit_data" />
+        <input type="submit" name="submit" class="submit btn btn-success"  value="Enviar" id="submit_data" />
         
         </fieldset>
 </body>
