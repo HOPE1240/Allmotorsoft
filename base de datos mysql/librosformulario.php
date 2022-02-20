@@ -28,27 +28,29 @@
         <input type="text" class="form-control" name="TITULO"  placeholder="TITULO" >
 
         <?php
+        echo "<br>";
               $conection = mysqli_connect("localhost", "root", "", "biblioteca") or
               die("Problemas con la conexion");
-              echo "<select name='AutorLibro'>";
+              echo "<select name='AutorLibro' class=\"form-select\">";
               $opciones = mysqli_query ($conection, "select * from autor");
               while ($valores = mysqli_fetch_array($opciones)) {
                 echo '<option value="'.$valores[Id_autor].'">'.$valores[Nombre].'</option>';
               }
               echo "</select>";
 
-              echo "<select name='EditorialLibro'>";
+              echo "<br>";
+
+              echo "<select name='EditorialLibro' class=\"form-select\">";
               $opciones = mysqli_query ($conection, "select * from editorial");
+              
               while ($valores = mysqli_fetch_array($opciones)) {
+                
                 echo '<option value="'.$valores[Id_editorial].'">'.$valores[Nombre].'</option>';
               }
               echo "</select><br>";
             ?>
 
             <br>
-    
-    
-    
         <input type="submit" name="submit" class="submit btn btn-success"  value="Enviar" id="submit_data" />
         
         </fieldset>
