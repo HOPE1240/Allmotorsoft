@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +52,8 @@
 
 
     <?php
+
+  
     
         $conection = mysqli_connect("localhost", "root", "", "biblioteca") or
         die ("Error al conectar con la base de datos");
