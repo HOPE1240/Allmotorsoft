@@ -2,10 +2,16 @@ body h1 {text-align: center;}
 
 body{background: rgb(240, 238, 238);
     color: rgb(252, 248, 248);
-    background-color: #f1eced;
-    background-color: #f7eff0;
-    background-image: url("https://wallpaperaccess.com/full/868866.jpg");
+    background-color: #0e0d0d;
+    background-color: #131212;
+   
     background-position: center;
     background-repeat: no-repeat;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;}
+    #mi_tabla{
+        overflow:auto;
+        height:500px;
+        width:auto;
+        padding:0px;
+    }
